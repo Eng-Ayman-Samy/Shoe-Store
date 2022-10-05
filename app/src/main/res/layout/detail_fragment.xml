@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.udacity.shoestore.models.ShoeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.DetailFragment">
+        <!--I use Constraint layout as parent of my views so arrange them for what is needed -->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/p25"
+            android:layout_marginEnd="@dimen/p10"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--I use vertical linear layout to make list of text view hold data labels-->
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h"
+                android:gravity="center"
+                android:text="@string/shoe_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h"
+                android:gravity="center"
+                android:text="@string/company"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h"
+                android:gravity="center"
+                android:text="@string/shoe_size"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h"
+                android:gravity="center"
+                android:text="@string/description"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/p25"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--I use vertical linear layout to make list of edit text to get or set data -->
+            <EditText
+                android:id="@+id/shoeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:inputType="text"
+                android:text="@={vm.newShoe.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:text="@string/shoe_name" />
+
+            <EditText
+                android:id="@+id/company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:inputType="text"
+                android:text="@={vm.newShoe.company}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:text="@string/company" />
+
+            <EditText
+                android:id="@+id/shoeSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:inputType="number"
+                android:text="@={vm.size}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:text="@string/shoe_size" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:inputType="text"
+                android:text="@={vm.newShoe.description}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                tools:text="@string/description" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/p25"
+            android:backgroundTint="#03A9F4"
+            android:text="@string/save"
+            app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/saveButton"
+            app:layout_constraintTop_toTopOf="@+id/saveButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

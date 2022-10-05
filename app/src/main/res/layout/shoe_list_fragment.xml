@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ShoeListFragment">
+        <!-- floating action button need to be in the top of views so need to use  CoordinatorLayout  -->
+
+        <ScrollView
+            android:id="@+id/listScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/start_dp"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginEnd="@dimen/start_dp"
+            android:contentDescription="@string/scroll_shoe_list">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/p10"
+                android:paddingBottom="@dimen/p80">
+                <!--need list of views so I used vertical linear layout or use list view or recycler view -->
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addShoeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/p25"
+            android:layout_marginBottom="@dimen/p25"
+            android:contentDescription="@string/add_new_shoe"
+            android:src="@drawable/ic_add" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
