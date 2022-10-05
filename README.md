@@ -8,3 +8,6 @@ This project will consist of five screens. You don't have to create a shoe store
 4. Shoe Listing screen
 5. Shoe Detail screen for adding a new shoe
 
+Udacity Nanodegree program
+
+Advanced Android Kotlin Development
